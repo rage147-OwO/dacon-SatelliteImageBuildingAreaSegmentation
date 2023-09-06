@@ -1,0 +1,47 @@
+[2023-07-26 03:41:19,421] torch.distributed.elastic.multiprocessing.redirects: [WARNING] NOTE: Redirects are currently not supported in Windows or MacOs.
+D:\GitHub\HRNet-Semantic-Segmentation\.venv\lib\site-packages\torch\distributed\launch.py:181: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use-env is set by default in torchrun.
+If your script expects `--local-rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+[W socket.cpp:663] [c10d] The client socket has failed to connect to [DESKTOP-9JJ2UTF]:29500 (system error: 10049 - 요청한 주소는 해당 컨텍스트에서 유효하지 않습니다.).
+usage: train.py [-h] --cfg CFG [--seed SEED] [--local_rank LOCAL_RANK] ...
+train.py: error: unrecognized arguments: --local-rank=0
+[2023-07-26 03:41:24,470] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 2) local_rank: 0 (pid: 15272) of binary: D:\GitHub\HRNet-Semantic-Segmentation\.venv\Scripts\python.exe
+Traceback (most recent call last):
+  File "C:\Users\lim\AppData\Local\Programs\Python\Python39\lib\runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\lim\AppData\Local\Programs\Python\Python39\lib\runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "D:\GitHub\HRNet-Semantic-Segmentation\.venv\lib\site-packages\torch\distributed\launch.py", line 196, in <module>
+    main()
+  File "D:\GitHub\HRNet-Semantic-Segmentation\.venv\lib\site-packages\torch\distributed\launch.py", line 192, in main
+    launch(args)
+  File "D:\GitHub\HRNet-Semantic-Segmentation\.venv\lib\site-packages\torch\distributed\launch.py", line 177, in launch
+    run(args)
+  File "D:\GitHub\HRNet-Semantic-Segmentation\.venv\lib\site-packages\torch\distributed\run.py", line 788, in run
+    elastic_launch(
+  File "D:\GitHub\HRNet-Semantic-Segmentation\.venv\lib\site-packages\torch\distributed\launcher\api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "D:\GitHub\HRNet-Semantic-Segmentation\.venv\lib\site-packages\torch\distributed\launcher\api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+tools/train.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2023-07-26_03:41:24
+  host      : DESKTOP-9JJ2UTF.Home
+  rank      : 0 (local_rank: 0)
+  exitcode  : 2 (pid: 15272)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
